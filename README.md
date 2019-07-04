@@ -4,7 +4,7 @@ laravel-admin Multi Language
 ## Install
 
 ```
-composer require kevinsoft/multi-language
+composer require laravel-admin-extensions/multi-language
 ```
 
 ## Config
