@@ -1,9 +1,9 @@
 {
-    "name": "kevinsoft/multi-language",
-    "description": "description...",
+    "name": "laravel-admin-extensions/multi-language",
+    "description": "适用于laravel-admin的多语言支持扩展",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/kevinsoft/multi-language",
+    "homepage": "https://github.com/laravel-admin-extensions/multi-language",
     "license": "MIT",
     "authors": [
         {
