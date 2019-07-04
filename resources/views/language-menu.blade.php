@@ -11,7 +11,7 @@
                     <li><!-- start message -->
                         <a class="language" href="#" data-id="{{$key}}">
                             {{$language}}
-                            @if($key == session()->get('locale'))
+                            @if($key == $current)
                                 <i class="fa fa-check pull-right"></i>
                             @endif
                         </a>

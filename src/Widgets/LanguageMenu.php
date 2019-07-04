@@ -5,6 +5,7 @@ namespace KevinSoft\MultiLanguage\Widgets;
 
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;
 use KevinSoft\MultiLanguage\MultiLanguage;
 
@@ -18,8 +19,11 @@ class LanguageMenu implements Renderable
      */
     public function render()
     {
-        // TODO: Implement render() method.
+        $current = MultiLanguage::config('default');
+        if(Cookie::has('locale')) {
+            $current = Cookie::get('locale');
+        }
         $languages = MultiLanguage::config("languages");
-        return view("multi-language::language-menu", compact('languages'))->render();
+        return view("multi-language::language-menu", compact('languages', 'current'))->render();
     }
 }
