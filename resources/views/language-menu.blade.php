@@ -26,7 +26,7 @@
 
     $(".language").click(function () {
         let id = $(this).data('id');
-        $.post("{{ admin_url('/locale') }}",{locale: id}, function () {
+        $.post("{{ admin_url('/locale') }}",{_token:LA.token, locale: id}, function () {
             location.reload();
         })
     })
