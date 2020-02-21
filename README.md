@@ -26,6 +26,10 @@ In `config/admin.php`
             ],
             // default locale
             'default' => 'zh-CN',
+            // if or not show multi-language login page, default is true
+            'show-login-page' => true,
+            // if or not show multi-language navbar, default is true
+            'show-navbar' => true
         ],
     ],
 ```

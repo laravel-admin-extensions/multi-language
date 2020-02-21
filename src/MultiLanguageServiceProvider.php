@@ -34,6 +34,8 @@ class MultiLanguageServiceProvider extends ServiceProvider
 
         # $this->app->make('Illuminate\Contracts\Http\Kernel')->prependMiddleware(Middlewares\MultiLanguageMiddleware::class);
         $this->app['router']->pushMiddlewareToGroup('web', Middlewares\MultiLanguageMiddleware::class);
-        Admin::navbar()->add(new LanguageMenu());
+        if(MultiLanguage::config("show-navbar", true)) {
+            Admin::navbar()->add(new LanguageMenu());
+        }
     }
 }

@@ -6,7 +6,7 @@
   <title>{{config('admin.title')}} | {{ trans('admin.login') }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
+
   @if(!is_null($favicon = Admin::favicon()))
   <link rel="shortcut icon" href="{{$favicon}}">
   @endif
@@ -110,7 +110,7 @@
 
     $("#locale").change(function () {
       let locale = $('#locale option:selected').val();
-      $.post(`/admin/locale`,{locale: locale}, function () {
+      $.post("{{ admin_url('/locale') }}",{locale: locale}, function () {
         location.reload();
       })
     });
