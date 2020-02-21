@@ -5,14 +5,14 @@ namespace KevinSoft\MultiLanguage\Http\Controllers;
 use Encore\Admin\Layout\Content;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request;
 use KevinSoft\MultiLanguage\MultiLanguage;
 
 class MultiLanguageController extends Controller
 {
 
     public function locale() {
-        $locale = Input::get('locale');
+        $locale = Request::input('locale');
         $languages = MultiLanguage::config('languages');
         if(array_key_exists($locale, $languages)) {
 
