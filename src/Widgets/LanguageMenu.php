@@ -20,8 +20,9 @@ class LanguageMenu implements Renderable
     public function render()
     {
         $current = MultiLanguage::config('default');
-        if(Cookie::has('locale')) {
-            $current = Cookie::get('locale');
+        $cookie_name = MultiLanguage::config('cookie-name', 'locale');
+        if(Cookie::has($cookie_name)) {
+            $current = Cookie::get($cookie_name);
         }
         $languages = MultiLanguage::config("languages");
         return view("multi-language::language-menu", compact('languages', 'current'))->render();
